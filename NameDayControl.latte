@@ -1,0 +1,6 @@
+{if $current[1]}
+	Dnes slavíme <strong>{$current[0]}</strong>.
+
+{else}
+	Dnes {$current[2]|plural:'má':'mají':'mají'} svátek <strong>{$current[0]}</strong>, blahopřejeme.
+{/if}

@@ -1,17 +1,41 @@
 <?php
 
-namespace Model\Factories;
+/**
+ * This file is part of the NameDayControl package
+ *
+ * Copyright (c) 2013 Petr Kessler (http://kesspess.1991.cz)
+ *
+ * @license  MIT
+ * @link     https://github.com/uestla/NameDayControl
+ */
 
-use Components;
+
+namespace Components\Factories;
+
+use Nette;
+use Components\Controls;
 
 
-class NameDayControlFactory extends BaseControlFactory
+class NameDayControlFactory extends Nette\Object implements INameDayControlFactory
 {
-	/** @return Components\NameDayControl */
-	function create()
+
+	/** @var Nette\DI\IContainer */
+	protected $container;
+
+
+
+	/** @param  Nette\DI\IContainer */
+	function __construct(Nette\DI\IContainer $container)
 	{
-		$c = new Components\NameDayControl;
-		$this->onCreate( $c );
-		return $c;
+		$this->container = $container;
 	}
+
+
+
+	/** @return Controls\NameDayControl */
+	function createControl()
+	{
+		return $this->container->createNameDayControl();
+	}
+
 }

@@ -1,6 +1,16 @@
 <?php
 
-namespace Components;
+/**
+ * This file is part of the NameDayControl package
+ *
+ * Copyright (c) 2013 Petr Kessler (http://kesspess.1991.cz)
+ *
+ * @license  MIT
+ * @link     https://github.com/uestla/NameDayControl
+ */
+
+
+namespace Components\Controls;
 
 use Nette;
 
@@ -414,6 +424,7 @@ class NameDayControl extends BaseControl
 
 
 
+	/** @return void */
 	function render()
 	{
 		$month = (int) date('n');

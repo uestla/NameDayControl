@@ -9,7 +9,6 @@
  * @link     https://github.com/uestla/NameDayControl
  */
 
-
 namespace Components\Controls;
 
 use Nette;
@@ -17,6 +16,7 @@ use Nette;
 
 class NameDayControl extends BaseControl
 {
+
 	/** @var array pole svatku - struktura array( MESIC => array( DEN => array('Jmenovec', (bool) IS_SPECIAL_DAY, (int) count ), ... ), ... ) */
 	protected static $namedays = array(
 		1 => array(
@@ -423,7 +423,6 @@ class NameDayControl extends BaseControl
 	);
 
 
-
 	/** @return void */
 	function render()
 	{
@@ -437,4 +436,5 @@ class NameDayControl extends BaseControl
 		$this->template->current = static::$namedays[$month][$day];
 		$this->template->render();
 	}
+
 }
